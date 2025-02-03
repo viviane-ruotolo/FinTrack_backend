@@ -1,0 +1,11 @@
+# Arquivos do Python
+*.pyc
+__pycache__/
+
+# Configurações do ambiente virtual
+venv/
+.idea/
+
+# Banco de dados SQLite
+db.sqlite3
+
