@@ -1,8 +1,8 @@
-from . import person, courseClass
+from .person import Person
 from django.db import models
 
-class ExperimentalStudent(person):
-    experimental_classes = models.ManyToManyField(courseClass, on_delete = models.CASCADE)
+class ExperimentalStudent(Person):
+    experimental_classes = models.ManyToManyField('CourseClass')
 
     def __str__(self):
         return f"Experimental - {self.student.name}"

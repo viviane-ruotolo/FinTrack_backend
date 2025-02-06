@@ -1,12 +1,12 @@
-from . import person, course, showcase
+from .person import Person
 from django.db import models
 
-class Student(person):
+class Student(Person):
     total_value = models.FloatField()
     discount = models.FloatField()
     due_date = models.DateField()
-    courses = models.ManyToManyField(course, on_delete = models.CASCADE)
-    showcases = models.ManyToManyField(showcase, on_delete= models.CASCADE)
+    courses = models.ManyToManyField('Course')
+    showcases = models.ManyToManyField('Showcase')
 
     def __str__(self):
         return f"{self.name} (Student)"

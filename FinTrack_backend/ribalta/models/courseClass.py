@@ -1,4 +1,4 @@
-from . import course, experimentalStudent
+from .experimentalStudent import ExperimentalStudent
 from django.db import models
 
 class CourseClass(models.Model):
@@ -6,8 +6,8 @@ class CourseClass(models.Model):
     is_active = models.BooleanField(default=True)
     description = models.TextField()
     date = models.DateField()
-    course = models.ForeignKey(course, on_delete= models.CASCADE)
-    experimental_students = models.ManyToManyField(experimentalStudent, on_delete= models.CASCADE)
+    course = models.ForeignKey('Course', on_delete= models.CASCADE)
+    experimental_students = models.ManyToManyField(ExperimentalStudent)
     
     #Buscar presença pela tabela attendance
 
@@ -17,7 +17,7 @@ class CourseClass(models.Model):
     def fill_attendance_list(self):
         pass
 
-    def insert_experimental_student(self, student: experimentalStudent):
+    def insert_experimental_student(self, student: ExperimentalStudent):
         self.experimental_students.add(student)
         self.save()
         pass

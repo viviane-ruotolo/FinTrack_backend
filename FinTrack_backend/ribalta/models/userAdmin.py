@@ -1,7 +1,7 @@
-from . import person
+from .person import Person
 from django.db import models
 
-class UserAdmin(person):
+class UserAdmin(Person):
     function = models.CharField(max_length=255)
     permissions = models.JSONField()
     is_global_user = models.BooleanField(default=False)

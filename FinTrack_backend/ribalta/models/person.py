@@ -33,5 +33,6 @@ class Person(models.Model):
         self.is_active = False
 
 #Configurar rotas, views e serializers para testes 
-#configurar super usuário
 #testes
+
+#Parei no passo 5 - django rest framework

@@ -1,4 +1,3 @@
-from . import student, courseClass
 from django.db import models
 
 
@@ -10,7 +9,8 @@ class Course(models.Model):
     #Representar os dias de uma forma melhor -> enum?
     day_of_week = models.CharField(max_length=40)
     class_time = models.DurationField
-    students = models.ManyToManyField(student, on_delete= models.CASCADE)
+    students = models.ManyToManyField('Student')
+    
     #Buscar aulas de um curso específico a partir da tabela de aulas
 
     def __str__(self):
