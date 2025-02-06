@@ -1,4 +1,4 @@
-from . import person, course
+from . import person, course, showcase
 from django.db import models
 
 class Student(person):
@@ -6,10 +6,7 @@ class Student(person):
     discount = models.FloatField()
     due_date = models.DateField()
     courses = models.ManyToManyField(course, on_delete = models.CASCADE)
-    
-    #VER COMO REPRESENTAR O RELACIONAMENTO ONE TO MANY (NÃO TEM FIELD)
-    #payments = 
-    #showcases
+    showcases = models.ManyToManyField(showcase, on_delete= models.CASCADE)
 
     def __str__(self):
         return f"{self.name} (Student)"

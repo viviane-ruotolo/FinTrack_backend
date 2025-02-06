@@ -11,8 +11,7 @@ class Course(models.Model):
     day_of_week = models.CharField(max_length=40)
     class_time = models.DurationField
     students = models.ManyToManyField(student, on_delete= models.CASCADE)
-    #É ONE TO MANY - PRECISA ARRUMARRRR
-    classes = models.OneToOneField(courseClass, on_delete= models.CASCADE)
+    #Buscar aulas de um curso específico a partir da tabela de aulas
 
     def __str__(self):
         return self.description

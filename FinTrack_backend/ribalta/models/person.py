@@ -35,4 +35,3 @@ class Person(models.Model):
 #Configurar rotas, views e serializers para testes 
 #configurar super usuário
 #testes
-#como resolver campos ONE to MANY

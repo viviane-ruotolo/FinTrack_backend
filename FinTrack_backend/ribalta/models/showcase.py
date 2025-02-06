@@ -13,6 +13,7 @@ class Showcase():
     def __str__(self):
         return f"{self.description} - {self.date}"
     
+    #Testar se esse cálculo realmente funciona
     def calculate_final_cost(self):
         for budget in self.budgets:
             self.final_cost += budget

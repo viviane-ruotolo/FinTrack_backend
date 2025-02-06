@@ -9,9 +9,7 @@ class CourseClass(models.Model):
     course = models.ForeignKey(course, on_delete= models.CASCADE)
     experimental_students = models.ManyToManyField(experimentalStudent, on_delete= models.CASCADE)
     
-    #que tipo de dado isso seria no BD???
-    #Fazer outra classe??
-    #attendance_list = NÃO SEI
+    #Buscar presença pela tabela attendance
 
     def __str__():
         return "f{self.course.description} - {self.date}"
