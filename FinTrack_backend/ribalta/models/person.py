@@ -32,7 +32,8 @@ class Person(models.Model):
     def delete(self):
         self.is_active = False
 
-#Configurar rotas, views e serializers para testes 
+#Arrumar permissões dos usuários?  (super user)
 #testes
-
-#Parei no passo 5 - django rest framework
+#Fazer login dos UserAdmin
+#Fazer Serializers e views para dados diferentes dentro da classe
+#Experimental student como atributo: is_experimental
